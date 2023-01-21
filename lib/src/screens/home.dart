@@ -1,5 +1,4 @@
-import 'package:design_app/src/widget/header.dart';
-import 'package:design_app/src/widget/header_border.dart';
+import 'package:design_app/src/widget/header_circular.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -7,6 +6,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: HeaderBorder());
+    return const Scaffold(body: HeaderCircular());
   }
 }
