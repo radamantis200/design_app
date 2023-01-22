@@ -1,5 +1,5 @@
+import 'package:design_app/src/screens/animation_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:design_app/src/screens/home.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -10,6 +10,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: HomeScreen());
+    return const MaterialApp(home: AnimationScreen());
   }
 }
