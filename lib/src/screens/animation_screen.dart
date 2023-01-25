@@ -19,9 +19,9 @@ class _CuadradoAnimadoState extends State<_CuadradoAnimado>
     with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> rotation;
-  late Animation<double> opacidad;
-  late Animation<double> agrandar;
-  late Animation<double> moverDerecha;
+  late Animation<double> opacity;
+  late Animation<double> enlarge;
+  late Animation<double> moveRight;
 
   @override
   initState() {
@@ -30,12 +30,12 @@ class _CuadradoAnimadoState extends State<_CuadradoAnimado>
 
     rotation = Tween(begin: 0.0, end: 4 * math.pi)
         .animate(CurvedAnimation(parent: controller, curve: Curves.easeOut));
-    opacidad = Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+    opacity = Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
         parent: controller,
         curve: const Interval(0.0, 0.25, curve: Curves.easeOut)));
-    agrandar = Tween(begin: 0.0, end: 1.0)
+    enlarge = Tween(begin: 0.0, end: 1.0)
         .animate(CurvedAnimation(parent: controller, curve: Curves.easeOut));
-    moverDerecha = Tween(begin: 0.0, end: 200.0)
+    moveRight = Tween(begin: 0.0, end: 200.0)
         .animate(CurvedAnimation(parent: controller, curve: Curves.easeOut));
 
     super.initState();
@@ -54,11 +54,11 @@ class _CuadradoAnimadoState extends State<_CuadradoAnimado>
       animation: controller,
       builder: (context, child) {
         return Transform.translate(
-          offset: Offset(moverDerecha.value, 0.0),
+          offset: Offset(moveRight.value, 0.0),
           child: Transform.scale(
-            scale: agrandar.value,
+            scale: enlarge.value,
             child: Opacity(
-              opacity: opacidad.value,
+              opacity: opacity.value,
               child: Transform.rotate(
                   angle: rotation.value, child: const _Rectangulo()),
             ),
