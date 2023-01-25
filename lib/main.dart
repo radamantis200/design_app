@@ -1,4 +1,4 @@
-import 'package:design_app/src/screens/animation_screen.dart';
+import 'package:design_app/src/screens/animation_rectangulo_screen.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -10,6 +10,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: AnimationScreen());
+    return const MaterialApp(home: AnimationRectanguloScreen());
   }
 }
